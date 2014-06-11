@@ -1,0 +1,100 @@
+
+<!DOCTYPE html> 
+<html> 
+<head> 
+  <meta charset="utf-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/> <!--320-->
+  <title>Canvas nudge</title> 
+    <style> 
+    body{
+    	color: white !important;
+    	background: #1e1e1e !important;
+    }
+    #canvas{
+    	border: 1px solid black;
+    }
+    .btn{
+    	color: white !important;
+    	background: #2a2a2a !important;
+    	border: 0px !important;
+    }
+    .page{
+    	margin: 20px auto; 
+    }
+    #canvas{
+        border-radius: 4px;
+    	min-width: 900px;
+    	width: 100%;
+    	min-height: 600px;
+    	max-height: 900px;
+    }
+    .lcd{
+  border: 1px solid #dd6d28;
+  background: #aa541e;
+  color: #f2782c;
+  padding: 5px 10px;
+  font-family: monospace;
+    }
+  </style> 
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+</head> 
+<body>
+	<div class="page">
+		<div class="col-md-1 col-xs-1 tools">
+			<p>Tools</p>
+			<button class="tool select btn btn-default"><i class="glyphicon glyphicon-move"></i></button>
+
+		</div>
+
+		<div class="col-md-9 col-xs-9 map">
+			<canvas id="canvas" width="960" height="650"></canvas> <br/>
+
+			
+			<div class="row">
+				<div class="col-md-4">add images from your computer
+			<input type="file" id="imageLoader" name="imageLoader"/>
+		</div>
+		<div class="col-md-8">
+			  <label>
+      <input type="checkbox" id="tileOutlines" checked="true"> Tile Outlines
+    </label>
+		</div>
+		</div>
+		</div>
+
+		<div class="col-md-2 col-xs-2">
+			  <div class="form-group">
+
+    <label for="tileNav">Selected Tile</label>
+    <select id="tileNav"class="form-control"></select>
+  </div>
+  <br/>
+  <div class="form-group">
+  	<label>Adjust Tile</label><br/>
+  		<p>position x</p>
+  		<p class="lcd" id="currentTilePosX"></p>
+			<button id="moveLeft" class="btn btn-default">-</button>
+			<button id="moveRight" class="btn btn-default">+</button>
+			<p>position y</p>
+  		<p class="lcd" id="currentTilePosY"></p>
+			<button id="moveUp" class="btn btn-default">-</button>
+			<button id="moveDown" class="btn btn-default">+</button>
+  	<p>scale</p>
+  	<p class="lcd" id="currentTileSize"></p>
+			<button id="scaleUp" class="btn btn-default">+</button>
+			<button id="scaleDown" class="btn btn-default">-</button>
+			<p>rotation</p>
+			<p class="lcd" id="currentTileAngle"></p>
+			<button id="rotateLeft" class="btn btn-default">left</button>
+			<button id="rotateRight" class="btn btn-default">right</button>
+
+		</div>
+		</div>
+	</div><!-- .row -->
+  
+</body> 
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<!-- <script type="text/javascript" src="magictouch.js"></script> -->
+<script type="text/javascript" src="levelEditor.js"></script>
+</html>
